@@ -1,10 +1,21 @@
 {
   "name": "olg-playwright-assessment",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright and TypeScript UI automation project completed as part of a technical assessment.",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "test-automation",
+    "e2e-testing"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
