@@ -1,5 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
+const PLAYWRIGHT_URL = 'https://playwright.dev/';
+
 export class PlaywrightHomePage {
   readonly page: Page;
   readonly getStartedLink: Locator;
@@ -11,7 +13,7 @@ export class PlaywrightHomePage {
     this.mainHeading = page.locator('h1');
   }
 
-  async goto() {
-    await this.page.goto('https://playwright.dev/');
+  async goto(): Promise<void> {
+    await this.page.goto(PLAYWRIGHT_URL);
   }
 }
