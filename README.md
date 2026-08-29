@@ -1,16 +1,23 @@
 # OLG Playwright Assessment
 
-## Overview
+A Playwright and TypeScript UI automation project completed as part of a technical assessment.
 
-This project contains automated UI tests built using Playwright and TypeScript.
+The project demonstrates maintainable end-to-end test automation using the Page Object Model, custom fixtures, reusable assertion utilities, and structured test organization.
 
-The framework follows the Page Object Model (POM) design pattern, with reusable fixtures and assertion utilities to keep tests maintainable and easy to read.
+## Technologies
 
-## Technologies Used
+- Playwright
+- TypeScript
+- Node.js
 
-* Playwright
-* TypeScript
-* Node.js
+## Framework Highlights
+
+- Page Object Model (POM)
+- Custom Playwright fixtures
+- Reusable assertion utilities
+- Structured test organization
+- End-to-end UI automation
+- Chromium browser execution
 
 ## Project Structure
 
@@ -21,43 +28,63 @@ utils/
 tests/
 ```
 
-* **pages** – page objects containing locators and page-specific methods
-* **fixtures** – custom Playwright fixtures
-* **utils** – reusable assertion helpers
-* **tests** – test specifications
+- **pages** – Page objects containing locators and page-specific methods
+- **fixtures** – Custom Playwright fixtures for reusable test setup
+- **utils** – Reusable assertion helpers
+- **tests** – Playwright test specifications
 
-## Test Cases
+## Test Scenarios
 
-### Basic Assertions
+### Basic UI Assertions
 
-Verifies:
+Validates:
 
-* Page title
-* Visible elements on the page
-* Page heading text
+- Page title
+- Element visibility
+- Page heading content
 
 ### Restaurant Search
 
-Verifies:
+Validates:
 
-* Search functionality using Booking.com
-* Navigation to search results
-* Search results are displayed
+- Search functionality using Booking.com
+- Navigation to search results
+- Search results visibility
 
 ## Installation
+
+Clone the repository and install the project dependencies:
 
 ```bash
 npm install
 ```
 
-## Run Tests
+Install Playwright browsers:
+
+```bash
+npx playwright install
+```
+
+## Running the Tests
+
+Run the test suite in Chromium:
 
 ```bash
 npx playwright test --project=chromium
 ```
 
-## Assumptionss
+Run tests in headed mode:
 
-Booking.com was selected as the public website for the restaurant search scenario because it provides a stable search flow for automated browser testing.
+```bash
+npx playwright test --project=chromium --headed
+```
 
+View the Playwright HTML report:
 
+```bash
+npx playwright show-report
+```
+
+## Assumptions
+
+Booking.com was selected as the public website for the restaurant search scenario because it provides a suitable search flow for demonstrating browser automation as part of the assessment.
