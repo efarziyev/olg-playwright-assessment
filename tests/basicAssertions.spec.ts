@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/fixtures';
 import { verifyUrl } from '../utils/assertionUtils';
 
-const PAGE_TITLE = /Playwright/;
+const PLAYWRIGHT_URL = /playwright/i;
 const HEADING_TEXT = 'Playwright';
 
 test('Verify title and visible elements on Playwright website', async ({
@@ -14,7 +14,7 @@ test('Verify title and visible elements on Playwright website', async ({
   });
 
   await test.step('Verify page URL', async () => {
-    await verifyUrl(page, PAGE_TITLE);
+    await verifyUrl(page, PLAYWRIGHT_URL);
   });
 
   await test.step('Verify Get Started link is visible', async () => {
