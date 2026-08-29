@@ -8,9 +8,20 @@ test('Search for restaurants and verify results on Booking.com', async ({
   page,
   bookingSearchPage,
 }) => {
-  await bookingSearchPage.goto();
-  await bookingSearchPage.searchDestination(SEARCH_TERM);
 
-  await verifyUrl(page, SEARCH_RESULTS_URL);
-  await expect(bookingSearchPage.firstPropertyCard).toBeVisible();
+  await test.step('Navigate to Booking.com', async () => {
+    await bookingSearchPage.goto();
+  });
+
+  await test.step('Search for restaurants', async () => {
+    await bookingSearchPage.searchDestination(SEARCH_TERM);
+  });
+
+  await test.step('Verify navigation to search results page', async () => {
+    await verifyUrl(page, SEARCH_RESULTS_URL);
+  });
+
+  await test.step('Verify search results are displayed', async () => {
+    await expect(bookingSearchPage.firstPropertyCard).toBeVisible();
+  });
 });
